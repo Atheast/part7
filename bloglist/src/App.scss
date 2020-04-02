@@ -1,0 +1,301 @@
+* {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+}
+
+$darkBlue: #0e406e;
+$red: #940f0f;
+$darkGreen: #046e45;
+
+@mixin button($color) {
+    margin: 10px;
+    padding: 5px;
+    background: $color;
+    color: #dedede;
+    border: 2px solid darken($color,10);
+}
+
+body {
+  background: #0A090C;
+  color: #dedede;
+}
+
+a {
+  color: #dedede;
+}
+
+.nav {
+  width: 100%;
+  background: $darkBlue;
+  display: flex;
+
+  a {
+    padding: 15px;
+    font-size: 20px;
+    text-decoration: none;
+  }
+
+  a:hover {
+    cursor: pointer;
+    background: lighten($darkBlue,15);
+  }
+
+  p {
+    margin-left: auto;
+    align-self: center;
+  }
+
+  button {
+    @include button($red);
+  }
+
+  button:hover {
+    cursor: pointer;
+    background: lighten($red,5);
+  }
+}
+
+.container {
+  width: 80%;
+  margin: 10px auto;
+}
+
+.blogs {
+
+  h1 {
+    text-align: center;
+    margin: 10px 0;
+  }
+
+  a {
+    display: block;
+    text-decoration: none;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 5px;
+    background: $darkBlue;
+    text-align: center;
+  }
+
+  a:hover {
+    background: lighten($darkBlue,10);
+  }
+
+  button {
+    @include button($darkGreen);
+    font-size: 18px;
+    margin: 10px 0;
+    border-radius: 5px;
+  }
+
+  button:hover {
+    cursor: pointer;
+    background: lighten($darkGreen,10);
+  }
+
+  .cancel {
+    @include button($red);
+    width: 100%;
+    margin: 0;
+    border-radius: 5px;
+  }
+
+  .cancel:hover {
+    cursor: pointer;
+    background: lighten($red,10);
+  }
+
+  .newBlog {
+    h2 {
+      margin: 10px 0;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+
+      input {
+        padding: 5px;
+        font-size: 18px;
+        border-radius: 5px;
+        outline: none;
+      }
+
+      label {
+        margin: 5px 0;
+      }
+    }
+  }
+}
+
+.users {
+  h1 {
+    text-align: center;
+    margin: 10px 0;
+  }
+
+  table {
+    margin: 10px 0;
+    width: 100%;
+    text-align: center;
+
+    thead {
+      background: #214212;
+      
+      td {
+        padding: 20px;
+      }
+    }
+
+    tbody {
+      background: $darkBlue;
+
+      td {
+        a {
+          display: block;
+          width: 100%;
+          padding: 20px;
+          text-decoration: none;
+        }
+
+        a:hover {
+          background: lighten($darkBlue,10);
+        }
+      }
+    }
+  }
+}
+
+.user {
+  h2 {
+    text-align: center;
+    margin: 10px 0;
+  }
+
+  h4 {
+    margin: 10px 0;
+  }
+
+  li {
+    margin: 10px 20px;
+  }
+}
+
+.blog {
+  border-radius: 5px;
+  margin: 20px 0;
+  font-size: 20px;
+
+  h2 {
+    text-align: center;
+    padding: 10px;
+  }
+
+  a {
+    display: block;
+    background: $darkBlue;
+    padding: 5px;
+    text-decoration: none;
+    text-align: center;
+    font-size: 18px;
+  }
+
+  a:hover {
+    background: lighten($darkBlue,5);
+  }
+
+  .like {
+    margin: 10px;
+
+    button {
+      @include button(lighten($darkBlue,5));
+      margin: 5px;
+      font-size: 20px;
+    }
+
+    button:hover {
+      cursor: pointer;
+      background: lighten($darkBlue, 15);
+    }
+  }
+
+  ul {
+    list-style-position: inside;
+  }
+
+  .comment {
+    margin: 0 10px;
+
+    input {
+      padding: 5px;
+      border: none;
+    }
+
+    button {
+      @include button($darkGreen);
+      margin: 10px 0;
+      padding: 5px;
+    }
+
+    button:hover {
+      cursor: pointer;
+      background: lighten($darkGreen, 5);
+    }
+  }
+
+  #remove {
+    @include button($red);
+    padding: 5px 10px;
+  }
+
+  #remove:hover {
+    cursor: pointer;
+    background: lighten($red,5);
+  }
+}
+
+.login {
+  height: 100vh;
+  display: grid;
+  font-size: 25px;
+
+  div {
+    margin: auto;
+    background: $darkBlue;
+    padding: 30px;
+    border-radius: 10px;
+
+    h2 {
+      text-align: center;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+
+      input {
+        margin: 5px 0;
+        padding: 5px;
+        font-size: 20px;
+        border: none;
+        border-radius: 5px;
+      }
+
+      button {
+        @include button($darkGreen);
+        margin: 0;
+        padding: 5px;
+        font-size: 20px;
+        border-radius: 9px;
+      }
+
+      button:hover {
+        cursor: pointer;
+        background: lighten($darkGreen, 5);
+      }
+    }
+  }
+}
